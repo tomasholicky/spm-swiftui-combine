@@ -8,6 +8,7 @@
 
 import SwiftUI
 import NetworkCore
+import UICore
 
 struct CoinListRowView: View {
     var coin: Coin
@@ -15,6 +16,7 @@ struct CoinListRowView: View {
     var body: some View {
         HStack {
             Text(coin.name)
+                .textStyle(Title())
             Spacer()
         }
     }

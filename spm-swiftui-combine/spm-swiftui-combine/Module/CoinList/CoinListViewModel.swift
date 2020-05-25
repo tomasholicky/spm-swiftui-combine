@@ -17,7 +17,7 @@ protocol CoinListViewModelOutputs {
     var coins: [Coin] { get }
 }
 
-final class CoinListViewModel: BaseViewModel, ObservableObject {
+final class CoinListViewModel: H.BaseViewModel, ObservableObject {
     typealias Dependencies = HasNetworkDependecies
     
     // MARK: - Dependencies

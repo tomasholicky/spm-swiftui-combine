@@ -19,7 +19,7 @@ protocol CoinDetailViewModelOutputs {
     var coinImageUrl: URL? { get }
 }
 
-final class CoinDetailViewModel: BaseViewModel, ObservableObject, CoinDetailViewModelInputs, CoinDetailViewModelOutputs {
+final class CoinDetailViewModel: H.BaseViewModel, ObservableObject, CoinDetailViewModelInputs, CoinDetailViewModelOutputs {
     typealias Dependencies = HasNetworkDependecies
     
     // MARK: - Dependencies

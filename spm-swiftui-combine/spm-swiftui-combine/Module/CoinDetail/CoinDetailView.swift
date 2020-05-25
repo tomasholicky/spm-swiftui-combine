@@ -9,6 +9,7 @@
 import SwiftUI
 import NetworkCore
 import KingfisherSwiftUI
+import UICore
 
 struct CoinDetailView: View {
     @ObservedObject var viewModel: CoinDetailViewModel
@@ -21,17 +22,15 @@ struct CoinDetailView: View {
         VStack {
             KFImage(viewModel.coinImageUrl)
             VStack(alignment: .leading) {
-                
                 Text(viewModel.coin.name)
-                    .font(.title)
+                    .textStyle(Title())
                 
                 HStack(alignment: .top) {
                     Text(viewModel.coin.symbol)
-                        .font(.subheadline)
+                        .textStyle(Subtitle())
                     Spacer()
                 }
             }.padding()
-            
             Spacer()
         }.onAppear {
             self.viewModel.coinAction()

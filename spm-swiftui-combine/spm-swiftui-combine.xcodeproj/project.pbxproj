@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		7A0DE720247BED53000A00CC /* CoinDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0DE71F247BED53000A00CC /* CoinDetailViewModel.swift */; };
 		7A0DE723247BFF1B000A00CC /* KingfisherSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 7A0DE722247BFF1B000A00CC /* KingfisherSwiftUI */; };
-		7A0DE726247C0505000A00CC /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0DE725247C0505000A00CC /* BaseViewModel.swift */; };
-		7A0DE728247C0577000A00CC /* BindableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0DE727247C0577000A00CC /* BindableProtocol.swift */; };
 		7A0DE730247C1027000A00CC /* CoinListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0DE72F247C1027000A00CC /* CoinListViewModel.swift */; };
 		7A0DE732247C1045000A00CC /* CoinListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0DE731247C1045000A00CC /* CoinListView.swift */; };
 		7A0DE734247C1060000A00CC /* CoinListRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0DE733247C1060000A00CC /* CoinListRowView.swift */; };
@@ -25,6 +23,9 @@
 		7A683A88246C02D4005E6818 /* spm_swiftui_combineUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A683A87246C02D4005E6818 /* spm_swiftui_combineUITests.swift */; };
 		7A683A97246C05AD005E6818 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A683A96246C05AD005E6818 /* MainTabView.swift */; };
 		7A711386246D7D9500434308 /* CoinDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A711385246D7D9500434308 /* CoinDetailView.swift */; };
+		7AFCB548247C271700AF809E /* BaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = 7AFCB547247C271700AF809E /* BaseCore */; };
+		7AFCB54F247C40BE00AF809E /* TextStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AFCB54D247C40BE00AF809E /* TextStyle.swift */; };
+		7AFCB550247C40BE00AF809E /* ButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AFCB54E247C40BE00AF809E /* ButtonStyle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,8 +47,6 @@
 
 /* Begin PBXFileReference section */
 		7A0DE71F247BED53000A00CC /* CoinDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinDetailViewModel.swift; sourceTree = "<group>"; };
-		7A0DE725247C0505000A00CC /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
-		7A0DE727247C0577000A00CC /* BindableProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindableProtocol.swift; sourceTree = "<group>"; };
 		7A0DE72F247C1027000A00CC /* CoinListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinListViewModel.swift; sourceTree = "<group>"; };
 		7A0DE731247C1045000A00CC /* CoinListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinListView.swift; sourceTree = "<group>"; };
 		7A0DE733247C1060000A00CC /* CoinListRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinListRowView.swift; sourceTree = "<group>"; };
@@ -67,6 +66,8 @@
 		7A683A89246C02D4005E6818 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7A683A96246C05AD005E6818 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		7A711385246D7D9500434308 /* CoinDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinDetailView.swift; sourceTree = "<group>"; };
+		7AFCB54D247C40BE00AF809E /* TextStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextStyle.swift; sourceTree = "<group>"; };
+		7AFCB54E247C40BE00AF809E /* ButtonStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonStyle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +76,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7A0DE723247BFF1B000A00CC /* KingfisherSwiftUI in Frameworks */,
+				7AFCB548247C271700AF809E /* BaseCore in Frameworks */,
 				7A3C6314246C788F00328FBF /* NetworkCore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -96,15 +98,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		7A0DE724247C04FE000A00CC /* Common */ = {
-			isa = PBXGroup;
-			children = (
-				7A0DE725247C0505000A00CC /* BaseViewModel.swift */,
-				7A0DE727247C0577000A00CC /* BindableProtocol.swift */,
-			);
-			path = Common;
-			sourceTree = "<group>";
-		};
 		7A0DE729247C0FAE000A00CC /* Module */ = {
 			isa = PBXGroup;
 			children = (
@@ -119,7 +112,6 @@
 			isa = PBXGroup;
 			children = (
 				7A683A96246C05AD005E6818 /* MainTabView.swift */,
-				7A0DE724247C04FE000A00CC /* Common */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -182,6 +174,7 @@
 		7A683A64246C02D2005E6818 /* spm-swiftui-combine */ = {
 			isa = PBXGroup;
 			children = (
+				7AFCB54C247C40B100AF809E /* Style */,
 				7A0DE729247C0FAE000A00CC /* Module */,
 				7A3C630D246C706500328FBF /* Dependencies */,
 				7A683A95246C030B005E6818 /* Static */,
@@ -228,6 +221,15 @@
 			path = Static;
 			sourceTree = "<group>";
 		};
+		7AFCB54C247C40B100AF809E /* Style */ = {
+			isa = PBXGroup;
+			children = (
+				7AFCB54E247C40BE00AF809E /* ButtonStyle.swift */,
+				7AFCB54D247C40BE00AF809E /* TextStyle.swift */,
+			);
+			path = Style;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -247,6 +249,7 @@
 			packageProductDependencies = (
 				7A3C6313246C788F00328FBF /* NetworkCore */,
 				7A0DE722247BFF1B000A00CC /* KingfisherSwiftUI */,
+				7AFCB547247C271700AF809E /* BaseCore */,
 			);
 			productName = "spm-swiftui-combine";
 			productReference = 7A683A62246C02D2005E6818 /* spm-swiftui-combine.app */;
@@ -366,7 +369,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7A0DE726247C0505000A00CC /* BaseViewModel.swift in Sources */,
+				7AFCB54F247C40BE00AF809E /* TextStyle.swift in Sources */,
 				7A3C630F246C707500328FBF /* AppDependency.swift in Sources */,
 				7A0DE730247C1027000A00CC /* CoinListViewModel.swift in Sources */,
 				7A0DE720247BED53000A00CC /* CoinDetailViewModel.swift in Sources */,
@@ -374,8 +377,8 @@
 				7A0DE732247C1045000A00CC /* CoinListView.swift in Sources */,
 				7A683A66246C02D2005E6818 /* AppDelegate.swift in Sources */,
 				7A683A68246C02D2005E6818 /* SceneDelegate.swift in Sources */,
-				7A0DE728247C0577000A00CC /* BindableProtocol.swift in Sources */,
 				7A711386246D7D9500434308 /* CoinDetailView.swift in Sources */,
+				7AFCB550247C40BE00AF809E /* ButtonStyle.swift in Sources */,
 				7A683A97246C05AD005E6818 /* MainTabView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -722,6 +725,10 @@
 		7A3C6313246C788F00328FBF /* NetworkCore */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = NetworkCore;
+		};
+		7AFCB547247C271700AF809E /* BaseCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = BaseCore;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

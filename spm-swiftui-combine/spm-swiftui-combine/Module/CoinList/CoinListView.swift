@@ -16,15 +16,17 @@ struct CoinListView: View {
     }
     
     var body: some View {
-        NavigationView {
-            List(viewModel.coins) { coin in
-                NavigationLink(destination: CoinDetailView(viewModel: CoinDetailViewModel(dependencies: dependencies, coin: coin))) {
-                    CoinListRowView(coin: coin)
-                }
+        List(viewModel.coins) { coin in
+            NavigationLink(destination: CoinDetailView(viewModel: CoinDetailViewModel(dependencies: dependencies, coin: coin))) {
+                CoinListRowView(coin: coin)
             }
-        }.onAppear {
+        }
+        .environment(\.defaultMinListRowHeight, 60)
+        .onAppear {
             self.viewModel.coinsAction()
-        }.navigationBarTitle("Coins")
+        }
+        .navigationBarTitle("")
+        .navigationBarHidden(true)
     }
 }
 

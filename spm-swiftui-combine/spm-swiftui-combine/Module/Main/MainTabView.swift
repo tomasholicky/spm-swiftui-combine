@@ -11,16 +11,33 @@ import SwiftUI
 struct MainTabView: View {
     var body: some View {
         TabView {
+            CoinListTabView()
+            InfoTabView()
+        }
+    }
+}
+
+struct CoinListTabView: View {
+    var body: some View {
+        NavigationView {
             CoinListView(viewModel: CoinListViewModel(dependencies: dependencies))
-                .tabItem {
-                    Image(systemName: "list.bullet")
-                    Text("First Tab")
-            }
-            Text("The content of the second view")
-                .tabItem {
-                    Image(systemName: "info.circle")
-                    Text("Second Tab")
-            }
+        }
+        .tabItem {
+            Image(systemName: "list.bullet")
+            Text("Coins")
+        }
+    }
+}
+
+struct InfoTabView: View {
+    var body: some View {
+        NavigationView {
+            Text("Info view")
+                .textStyle(Title())
+        }
+        .tabItem {
+            Image(systemName: "info.circle")
+            Text("Info")
         }
     }
 }

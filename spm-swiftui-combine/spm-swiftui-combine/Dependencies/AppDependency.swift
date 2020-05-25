@@ -8,6 +8,7 @@
 
 import Foundation
 import NetworkCore
+import BaseCore
 
 typealias HasNetworkDependecies = HasNetworkManager
 
@@ -22,3 +23,7 @@ protocol HasNoDependency {}
 extension AppDependency: HasNoDependency {}
 
 let dependencies = AppDependency()
+
+// MARK: - Aliases
+
+typealias H = HBase
