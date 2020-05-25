@@ -20,7 +20,7 @@ protocol CoinDetailViewModelOutputs {
 }
 
 final class CoinDetailViewModel: H.BaseViewModel, ObservableObject, CoinDetailViewModelInputs, CoinDetailViewModelOutputs {
-    typealias Dependencies = HasNetworkDependecies
+    typealias Dependencies = HasCoinApiDependecies
     
     // MARK: - Dependencies
     
@@ -43,7 +43,7 @@ final class CoinDetailViewModel: H.BaseViewModel, ObservableObject, CoinDetailVi
     // MARK: - Inputs
     
     func coinAction() {
-        let request: AnyPublisher<Coin, Error> = dependencies.networkManager.makeRequest(router: CoinGeckoRouter.getCoin(id: coin.id))
+        let request: AnyPublisher<Coin, Error> = dependencies.coinApi.getCoin(id: coin.id)
         request.sink(receiveCompletion: { (result) in
             switch result {
             case .finished:

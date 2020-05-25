@@ -35,6 +35,8 @@ public class NetworkManager {
         return SessionManager(configuration: configuration, delegate: SessionDelegate(), serverTrustPolicyManager: nil)
     }()
     
+    private let backgroundQueue = DispatchQueue.global(qos: .background)
+    
     // MARK: - Initialization
     
     public init(dependencies: Dependencies) {
@@ -54,7 +56,7 @@ extension NetworkManager: NetworkableManager {
         return Future { [unowned self] promise in
             self.manager.request(router)
                 .validate(statusCode: 200...299)
-                .responseJSON { (response) in
+                .responseJSON(queue: self.backgroundQueue) { (response) in
                     switch response.result {
                     case .failure(let error):
                         promise(.failure(error))
@@ -76,7 +78,9 @@ extension NetworkManager: NetworkableManager {
                         }
                     }
             }
-        }.eraseToAnyPublisher()
+        }
+        .receive(on: DispatchQueue.main)
+        .eraseToAnyPublisher()
     }
 }
 

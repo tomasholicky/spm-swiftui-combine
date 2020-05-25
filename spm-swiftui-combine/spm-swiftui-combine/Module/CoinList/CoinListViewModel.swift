@@ -18,7 +18,7 @@ protocol CoinListViewModelOutputs {
 }
 
 final class CoinListViewModel: H.BaseViewModel, ObservableObject {
-    typealias Dependencies = HasNetworkDependecies
+    typealias Dependencies = HasCoinApiDependecies
     
     // MARK: - Dependencies
     
@@ -40,7 +40,7 @@ final class CoinListViewModel: H.BaseViewModel, ObservableObject {
     // MARK: - Inputs
     
     func coinsAction() {
-        let request: AnyPublisher<[Coin], Error> = dependencies.networkManager.makeRequest(router: CoinGeckoRouter.getCoins)
+        let request: AnyPublisher<[Coin], Error> = dependencies.coinApi.getCoins()
         request.sink(receiveCompletion: { (result) in
             switch result {
             case .finished:

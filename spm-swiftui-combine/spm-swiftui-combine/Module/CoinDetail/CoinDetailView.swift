@@ -32,9 +32,9 @@ struct CoinDetailView: View {
                 }
             }.padding()
             Spacer()
-        }.onAppear {
-            self.viewModel.coinAction()
-        }.navigationBarTitle(Text(viewModel.coin.name), displayMode: .inline)
+        }
+        .onAppear(perform: viewModel.coinAction)
+        .navigationBarTitle(Text(viewModel.coin.name), displayMode: .inline)
     }
 }
 

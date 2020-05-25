@@ -11,11 +11,13 @@ import NetworkCore
 import BaseCore
 
 typealias HasNetworkDependecies = HasNetworkManager
+typealias HasCoinApiDependecies = HasCoinApi
 
 // MARK: - Dependencies
 
-final class AppDependency: HasNetworkDependecies {
+final class AppDependency: HasNetworkDependecies, HasCoinApiDependecies {
     lazy var networkManager: NetworkableManager = NetworkManager(dependencies: self)
+    lazy var coinApi: CoinApiServicing = CoinApiService(dependencies: self)
 }
 
 protocol HasNoDependency {}

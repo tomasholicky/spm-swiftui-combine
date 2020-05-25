@@ -22,9 +22,7 @@ struct CoinListView: View {
             }
         }
         .environment(\.defaultMinListRowHeight, 60)
-        .onAppear {
-            self.viewModel.coinsAction()
-        }
+        .onAppear(perform: viewModel.coinsAction)
         .navigationBarTitle("")
         .navigationBarHidden(true)
     }
