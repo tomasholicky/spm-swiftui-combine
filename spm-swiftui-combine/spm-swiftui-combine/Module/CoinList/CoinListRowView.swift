@@ -8,7 +8,6 @@
 
 import SwiftUI
 import NetworkCore
-import UICore
 
 struct CoinListRowView: View {
     var coin: Coin

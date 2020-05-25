@@ -66,7 +66,7 @@ extension CoinDetailViewModel {
     
     func bindAction() {
         $coin.sink { (coin) in
-            if let thumb = coin.image?.thumb, let thumbUrl = URL(string: thumb) {
+            if let thumb = coin.image?.large, let thumbUrl = URL(string: thumb) {
                 self.coinImageUrl = thumbUrl
             }
         }.store(in: &disposables)

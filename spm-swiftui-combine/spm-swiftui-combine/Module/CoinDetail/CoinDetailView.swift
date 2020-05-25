@@ -9,7 +9,6 @@
 import SwiftUI
 import NetworkCore
 import KingfisherSwiftUI
-import UICore
 
 struct CoinDetailView: View {
     @ObservedObject var viewModel: CoinDetailViewModel
@@ -19,18 +18,16 @@ struct CoinDetailView: View {
     }
     
     var body: some View {
-        VStack {
+        VStack(alignment: .center, spacing: 10) {
             KFImage(viewModel.coinImageUrl)
-            VStack(alignment: .leading) {
+                .frame(width: 200, height: 200, alignment: .center)
+                .padding(50)
+            VStack(alignment: .center, spacing: 8) {
                 Text(viewModel.coin.name)
                     .textStyle(Title())
-                
-                HStack(alignment: .top) {
-                    Text(viewModel.coin.symbol)
-                        .textStyle(Subtitle())
-                    Spacer()
-                }
-            }.padding()
+                Text(viewModel.coin.symbol)
+                    .textStyle(Subtitle())
+            }
             Spacer()
         }
         .onAppear(perform: viewModel.coinAction)
@@ -40,7 +37,7 @@ struct CoinDetailView: View {
 
 struct CoinDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        let coin = Coin(id: "1", symbol: "Test", name: "Test", image: CoinImage(thumb: "https://assets.coingecko.com/coins/images/863/large/0x.png?1547034672", small: "https://assets.coingecko.com/coins/images/863/large/0x.png?1547034672", large: "https://assets.coingecko.com/coins/images/863/large/0x.png?1547034672"))
+        let coin = Coin(id: "1", symbol: "Test", name: "Test", image: CoinImage(thumb: "", small: "", large: "https://assets.coingecko.com/coins/images/863/large/0x.png?1547034672"))
         let coinDetailVM = CoinDetailViewModel(dependencies: dependencies, coin: coin)
         return CoinDetailView(viewModel: coinDetailVM)
     }

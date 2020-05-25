@@ -8,21 +8,26 @@ final class NetworkCoreTests: XCTestCase {
         
         var bag = Set<AnyCancellable>()
         
-        let expectationTest = expectation(description: "Entry Login Flow User")
+        let expectationTest = expectation(description: "Network Core Test")
         
         let dependencies = AppDependency()
         
-        let aa: AnyPublisher<[Coin], Error> = dependencies.networkManager.makeRequest(router: CoinGeckoRouter.getCoins)
+        let request: AnyPublisher<[Coin], Error> = dependencies.networkManager.makeRequest(router: CoinGeckoRouter.getCoins)
         
-        aa.sink(receiveCompletion: { (error) in
-            print(error)
-            expectationTest.fulfill()
-        }) { (coin) in
-            print(coin)
-            expectationTest.fulfill()
+        request
+            .receive(on: DispatchQueue.main)
+            .sink(receiveCompletion: { (result) in
+                switch result {
+                case .failure(let error):
+                    print(error)
+                case .finished:
+                    expectationTest.fulfill()
+                }
+            }) { (coin) in
+                print(coin)
         }.store(in: &bag)
         
-        waitForExpectations(timeout: 1) { error in
+        waitForExpectations(timeout: 15) { error in
             if let error = error {
                 print("Error: \(error.localizedDescription)")
             }
@@ -35,6 +40,5 @@ final class NetworkCoreTests: XCTestCase {
 }
 
 final class AppDependency: HasNetworkManager{
-    
     lazy var networkManager: NetworkableManager = NetworkManager(dependencies: self)
 }
